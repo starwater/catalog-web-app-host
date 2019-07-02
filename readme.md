@@ -3,6 +3,7 @@
 1. run python database_setup.py 
 2. run python data.py
 3. run python project.py
+4. access the page through localhost:49403
 
 ## JSON API
 http://localhost:49403/catalog/4/JSON  
