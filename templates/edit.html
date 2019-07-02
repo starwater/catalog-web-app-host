@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block edit %}
+<h2>Add items:</h2>
+
+<form action=" {{ url_for('edit', id=item.id) }} " method="POST">
+  Item name:<br>
+  <input type="text" name="name" value=" {{ item.name }} ">
+  <br>
+  Item description:<br>
+  <input type="text" name="desc" value="{{ item.description }}">
+  <br><br>
+  Category:
+  <select name="category" id="">
+    <option value="{{ cname }}">{{ item.category_id }}</option>
+  </select>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>this edit page form-data will be sent to project.py</p>
+
+{% endblock %}

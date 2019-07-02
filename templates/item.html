@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block items %}
+    {% if 'username' in flask_session: %}
+        <a href=" {{ url_for('newitem', id=cid) }} ">new item</a>
+    {% endif %}
+    <ul>
+        {% for item in items: %}
+        <li><a href="{{ url_for('item_desc',id=item.id) }}">
+            {{ item.name }}
+        </a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

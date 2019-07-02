@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block catalog %}
+<ul>
+    {% for item in category: %}
+    <li><a href="{{ url_for('cataloglist',id=item.id)}}">
+        {{ item.name }}
+    </a></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block items %}
+
+{% endblock %}

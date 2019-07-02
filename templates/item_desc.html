@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block item_desc %}
+<h1>Description:</h1>
+        {% for i in item: %}
+                {{ i.description }}
+                {% if 'username' in flask_session and i.author_id==flask_session['user_id'] %}
+                        <a href=" {{ url_for('edit', id=i.id) }} ">edit</a>
+                        <a href=" {{  url_for('deleteItem', id=i.id) }} ">delete</a>
+                {% endif %}
+        {% endfor %}
+
+{% endblock %}

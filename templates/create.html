@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Add items:</h2>
+
+<form action=" {{ url_for('newitem', id=id) }} " method="post">
+  Item name:<br>
+  <input type="text" name="name" value="">
+  <br>
+  Item description:<br>
+  <input type="text" name="desc" value="">
+  <br><br>
+  Category:
+  <select name="category" id="">
+    <option value="{{ cname }}">{{ cname }}</option>
+  </select>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+
+<p>the form-data will be sent to project.py, use request.form['name'] to access it</p>
+
+</body>
+</html>
